@@ -50,15 +50,17 @@ cd backend
 npm install
 ```
 
-3. Start the server
+3. Start the server (from root dir)
 
 ```
+cd backend
 medusa develop
 ```
 
-4.  Start the storefront
+4.  Start the storefront (from root dir)
 
 ```
+cd storefront
 npm run dev
 ```
 
