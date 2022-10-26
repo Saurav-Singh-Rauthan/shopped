@@ -1,32 +1,26 @@
 import React, { useState } from "react"
 import "react-responsive-carousel/lib/styles/carousel.min.css"
 import { Carousel } from "react-responsive-carousel"
-import Skeleton from "@mui/material/Skeleton"
 
 import Image from "next/image"
-import Styles from "./Caraousel.module.css"
 
 const CarouselComp = (props) => {
   const [imgLoad, setimgLoad] = useState(0)
 
   return (
     <Carousel
-      autoPlay={true}
+      autoPlay={props.auto ? props.auto : true}
       dynamicHeight={true}
       showArrows={true}
       infiniteLoop={true}
       showThumbs={false}
       showStatus={false}
+      swipeable={true}
     >
       {props.img.map((img, index) => {
         return (
-          <div key={`${img} ${index}`} className={Styles.imgContainer}>
+          <div key={`${img} ${index}`} className={`${props.height ? props.height : 'h-[80vh]'}`}>
             <Image
-              // style={
-              //   imgLoad >= 3
-              //     ? { objectFit: "cover", height: "100%" }
-              //     : { display: "none" }
-              // }
               src={img}
               alt="img"
               onLoad={() => {
@@ -40,14 +34,6 @@ const CarouselComp = (props) => {
               className="absolute inset-0"
               draggable="false"
             />
-            {imgLoad >= 3 ? null : (
-              <Skeleton
-                animation="wave"
-                variant="rectangular"
-                width={"100%"}
-                height={"100%"}
-              />
-            )}
           </div>
         )
       })}

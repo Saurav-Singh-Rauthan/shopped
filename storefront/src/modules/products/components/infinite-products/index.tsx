@@ -10,6 +10,8 @@ import { useEffect, useMemo } from "react"
 import { useInView } from "react-intersection-observer"
 import { useInfiniteQuery } from "react-query"
 
+import Masonry from "@mui/lab/Masonry"
+
 type InfiniteProductsType = {
   params: StoreGetProductsParams
 }
@@ -54,11 +56,11 @@ const InfiniteProducts = ({ params }: InfiniteProductsType) => {
 
   return (
     <div className="flex-1 content-container">
-      <ul className="grid grid-cols-2 small:grid-cols-3 medium:grid-cols-4 gap-x-4 gap-y-8 flex-1">
+      <Masonry columns={3} spacing={8}>
         {previews.map((p) => (
-          <li key={p.id}>
+          <div key={p.id}>
             <ProductPreview {...p} />
-          </li>
+          </div>
         ))}
         {isLoading &&
           !previews.length &&
@@ -73,7 +75,7 @@ const InfiniteProducts = ({ params }: InfiniteProductsType) => {
               <SkeletonProductPreview />
             </li>
           ))}
-      </ul>
+      </Masonry>
       <div
         className="py-16 flex justify-center items-center text-small-regular text-gray-700"
         ref={ref}

@@ -2,6 +2,8 @@ import { StoreGetProductsParams } from "@medusajs/medusa"
 import { useCollections } from "medusa-react"
 import { ChangeEvent } from "react"
 
+
+
 type RefinementListProps = {
   refinementList: StoreGetProductsParams
   setRefinementList: (refinementList: StoreGetProductsParams) => void
@@ -50,21 +52,26 @@ const RefinementList = ({
         <div className="flex gap-x-3 small:flex-col small:gap-y-3">
           <span className="text-base-semi">Collections</span>
           <ul className="text-base-regular flex items-center gap-x-4 small:grid small:grid-cols-1 small:gap-y-2">
-            {collections?.map((c) => (
-              <li key={c.id}>
-                <label className="flex items-center gap-x-2">
-                  <input
-                    type="checkbox"
-                    defaultChecked={refinementList.collection_id?.includes(
-                      c.id
-                    )}
-                    onChange={(e) => handleCollectionChange(e, c.id)}
-                    className="accent-amber-200"
-                  />
-                  {c.title}
-                </label>
-              </li>
-            ))}
+            {/*  */}
+            {collections?.map((c) => {
+              console.log(collections)
+              return (
+                <li key={c.id}>
+                  <label className="flex items-center gap-x-2">
+                    <input
+                      type="checkbox"
+                      defaultChecked={refinementList.collection_id?.includes(
+                        c.id
+                      )}
+                      onChange={(e) => handleCollectionChange(e, c.id)}
+                      className="accent-amber-200"
+                    />
+                    {c.title}
+                  </label>
+                </li>
+              )
+            })}
+            {/* </Masonry> */}
           </ul>
         </div>
       </div>
