@@ -1,10 +1,13 @@
+import Item from "./item"
+import Masonry from "@mui/lab/Masonry"
+
 import { useFeaturedProductsQuery } from "@lib/hooks/use-layout-data"
 import UnderlineLink from "@modules/common/components/underline-link"
-import ProductPreview from "@modules/products/components/product-preview"
 import SkeletonProductPreview from "@modules/skeletons/components/skeleton-product-preview"
 
 import Image from "next/image"
 import model from "../../../../../public/model.jpg"
+import model2 from "../../../../../public/cta_one.jpg"
 
 const FeaturedProducts = () => {
   const { data } = useFeaturedProductsQuery()
@@ -21,22 +24,42 @@ const FeaturedProducts = () => {
           </p>
           <UnderlineLink href="/store">Explore products</UnderlineLink>
         </div>
-        <div className="grid grid-cols-2 gap-x-16">
-          <Image src={model} alt="model" className="rounded-lg "/>
-
-          <ul className="grid grid-cols-2 gap-x-4 gap-y-8">
+        <div className="grid grid-cols-2 gap-x-16 my-[2rem] justify-center align-middle">
+          <Masonry columns={2} spacing={4} className='justify-center'>
             {data
-              ? data.map((product) => (
-                  <li key={product.id}>
-                    <ProductPreview {...product} />
-                  </li>
-                ))
+              ? data.map((product) => <Item product={product} />)
               : Array.from(Array(4).keys()).map((i) => (
                   <li key={i}>
                     <SkeletonProductPreview />
                   </li>
                 ))}
-          </ul>
+          </Masonry>
+          <Image
+            src={model}
+            alt="model"
+            height={400}
+            objectFit={"cover"}
+            className="rounded-lg"
+          />
+        </div>
+
+        <div className="grid grid-cols-2 gap-x-16">
+          <Image
+            src={model2}
+            alt="model"
+            height={400}
+            objectFit={"cover"}
+            className="rounded-lg"
+          />
+          <Masonry columns={2} spacing={4}>
+            {data
+              ? data.map((product) => <Item product={product} />)
+              : Array.from(Array(4).keys()).map((i) => (
+                  <li key={i}>
+                    <SkeletonProductPreview />
+                  </li>
+                ))}
+          </Masonry>
         </div>
       </div>
     </div>
