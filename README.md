@@ -14,14 +14,6 @@ An open source ecommerce website built using Medusa and NextJS. It includes prod
 - ![image](https://user-images.githubusercontent.com/54982868/197937722-760f3e38-e00e-4900-8146-bc092dd5fb18.png)
 - ![image](https://user-images.githubusercontent.com/54982868/197937780-3033e486-09da-4465-991f-f0432ecfc77d.png)
 
-
-- ![image](https://user-images.githubusercontent.com/54982868/197417069-cd03e6af-33ff-4155-9602-6880045c41c6.png)<br />
-- ![image](https://user-images.githubusercontent.com/54982868/197417089-b76fcd2f-9898-4945-b408-de88399f1ffa.png)<br />
-- ![image](https://user-images.githubusercontent.com/54982868/197417272-d38e4191-76c3-473c-8803-0731518f3c91.png)<br />
-
-
-
-
 ## Set up Project
 
 ### Prerequisites
