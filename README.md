@@ -11,6 +11,9 @@ Saurav Singh Rauthan - @Saurav-Singh-Rauthan
 An open source ecommerce website built using Medusa and NextJS. It includes products screen, cart, checkout and payment.
 
 ### Preview
+- ![image](https://user-images.githubusercontent.com/54982868/197937722-760f3e38-e00e-4900-8146-bc092dd5fb18.png)
+- ![image](https://user-images.githubusercontent.com/54982868/197937780-3033e486-09da-4465-991f-f0432ecfc77d.png)
+
 
 ## Set up Project
 
